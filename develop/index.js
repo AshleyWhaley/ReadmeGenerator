@@ -52,10 +52,57 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(response) {
+   `
+    # ${response.title}
+    [![License](https://img.shields.io/badge/license-${response.license}-green)]
+
+    ## Description 
+    ${response.description}
+
+    ## Table of Contents
+    [Description](#Description)  
+    [Installation](#Installation)  
+    [Usage](#Usage)  
+    [License](#License)  
+    [Contributing](#Contributing)  
+    [Tests](#Tests)  
+    [Questions](#Questions)
+
+    ## Installation
+    ${response.install}
+
+    ## Usage
+    ${response.usage}
+
+    ## License
+    ${response.license}
+
+    ##Contributing 
+    ${response.contribution}
+
+    ## Testing
+    ${response.test}
+
+    ## Questions
+    For any questions, please contact me by email or Github page
+    Email: ${response.email}
+    Github Page: https://github.com/${response.username}
+`;
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((response) => {
+        try {
+            const readme = generateREADME(response);
+            fs.writeFileSync('README.md', readme);
+            console.log('Success! You wrote a README.md file');
+        } catch (error) {
+            console.log(error);
+        }
+    });
+};
 
 // Function call to initialize app
 init();
