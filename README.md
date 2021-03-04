@@ -1,5 +1,4 @@
-
-   # README
+ # README
     [![License](![NPM](https://img.shields.io/npm/l/inquirer?style=flat-square)]
 
     ## Description 
