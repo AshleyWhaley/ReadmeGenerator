@@ -1,5 +1,6 @@
- # README
-[![License](![NPM](https://img.shields.io/npm/l/inquirer?style=flat-square)]
+
+# README
+![NPM](https://img.shields.io/npm/l/inquirer?style=flat-square)
 
 ## Description 
 This is a simply README generator!
@@ -7,7 +8,7 @@ Through command-line prompts you can effectively and quickly fill out your appli
 
 You will need to fill out the applications name, description, installation instructions, usage information, contribution guidelines, test instructions, license information, Github username and email address.
 
-![Link to the video?](https://drive.google.com/file/d/1PDvnWH7XqhdBWsKQfrHJqLJ7UsGAYBzR/preview)
+[Link to the video](https://drive.google.com/file/d/1YjhgBIuRJeLS2kGIYrCszq-bfynqsXyH/view)
 
 ## Installation
 Run npm install in terminal 
@@ -17,7 +18,7 @@ Simply
 1. clone repository
 2. npm install
 3. node index.js
-4. fill out user information and enjoy!
+4. fill out application information and enjoy!
 
 ## Technologies Used
 Inquirer
@@ -27,4 +28,3 @@ Node.js
 ## Questions
 For any questions, please contact me through my Github page
 Github Page: [Ashley Whaley](https://github.com/AshleyWhaley)
-
