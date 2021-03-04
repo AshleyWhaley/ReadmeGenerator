@@ -3,7 +3,8 @@ const inquirer = require ('inquirer');
 const fs = require ('fs');
 
 //Create an array of questions 
-const questions = [
+const userPrompt = () =>
+inquirer.prompt([
     {
         type: 'input',
         message: 'What is the name of your project?',
@@ -11,7 +12,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Provide a short description of your project',
+        message: 'Provide a short description of your project.',
         name: 'description',
     },
     {
@@ -21,7 +22,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is the user information',
+        message: 'What is the usage information?',
         name: 'usage',
     },
     {
@@ -50,12 +51,12 @@ const questions = [
         message: 'What is your email address?',
         name: 'email',
     }
-];
+]);
 
 //Create a function to fill out README file
-function writeToFile(response) {
+const generate = (response) =>
    `
-    # ${response.title}
+    # ${response.name}
     [![License](https://img.shields.io/badge/license-${response.license}-green)]
 
     ## Description 
@@ -66,8 +67,8 @@ function writeToFile(response) {
     [Installation](#Installation)  
     [Usage](#Usage)  
     [License](#License)  
-    [Contributing](#Contributing)  
     [Tests](#Tests)  
+    [Contributing](#Contributing)  
     [Questions](#Questions)
 
     ## Installation
@@ -79,26 +80,26 @@ function writeToFile(response) {
     ## License
     ${response.license}
 
-    ##Contributing 
-    ${response.contribution}
-
     ## Testing
     ${response.test}
+
+    ##Contributing 
+    ${response.contribution}
 
     ## Questions
     For any questions, please contact me by email or Github page
     Email: ${response.email}
     Github Page: https://github.com/${response.username}
 `;
-}
+
 
 //Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then((response) => {
+const init = () => {
+    userPrompt().then((response) => {
         try {
-            const readme = generateREADME(response);
-            fs.writeFileSync('README.md', readme);
-            console.log('Success! You wrote a README.md file');
+            const readMe = generate(response);
+            fs.writeFileSync('README.md', readMe);
+            console.log(`You did it little buddy! You wrote a README.md file. You named it ${response.name}`);
         } catch (error) {
             console.log(error);
         }

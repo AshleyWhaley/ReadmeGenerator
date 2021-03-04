@@ -1,21 +1,22 @@
 {
-  "name": "static-site",
+  "name": "readmegenerator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ashley Whaley",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^6.5.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AshleyWhaley/ReadmeGenerator-"
+    "url": "git+https://github.com/AshleyWhaley/ReadmeGenerator"
   },
   "bugs": {
-    "url": "https://github.com/AshleyWhaley/ReadmeGenerator-/issues"
-  }
+    "url": "https://github.com/AshleyWhaley/ReadmeGenerator/issues"
+  },
+  "homepage": "https://github.com/AshleyWhaley/ReadmeGenerator#readme"
 }
