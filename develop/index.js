@@ -1,7 +1,8 @@
-
+//Include packages for application
 const inquirer = require ('inquirer');
 const fs = require ('fs');
 
+//Create an array of questions 
 const questions = [
     {
         type: 'input',
@@ -51,7 +52,7 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+//Create a function to fill out README file
 function writeToFile(response) {
    `
     # ${response.title}
@@ -91,7 +92,7 @@ function writeToFile(response) {
 `;
 }
 
-// TODO: Create a function to initialize app
+//Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((response) => {
         try {
@@ -104,5 +105,5 @@ function init() {
     });
 };
 
-// Function call to initialize app
+//Callback to initialize application 
 init();
